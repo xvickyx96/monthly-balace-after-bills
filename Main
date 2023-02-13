@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        ArrayList<Double> incomes = new ArrayList<Double>();
+        double income;
+        
+         do {
+            System.out.print("Enter income (0 to quit): ");
+            income = scanner.nextDouble();
+            
+            if (income != 0) {
+                incomes.add(income);
+            }
+        } while (income != 0);
+        
+        double totalIncomes = 0;
+        for (double item : incomes) {
+            totalIncomes += item;
+        }
+        
+        ArrayList<Double> expenses = new ArrayList<Double>();
+        double expense;
+        
+        do {
+            System.out.print("Enter expense (0 to quit): ");
+            expense = scanner.nextDouble();
+            
+            if (expense != 0) {
+                expenses.add(expense);
+            }
+        } while (expense != 0);
+        
+        double totalExpenses = 0;
+        for (double item : expenses) {
+            totalExpenses += item;
+        }
+        
+        double balance = totalIncomes - totalExpenses;
+        System.out.println("Yor balance after the monthly bills is " + balance);
+    }
+}
